@@ -1,5 +1,7 @@
 ---
 # tasks file for solr
+- name: Include Java setup tasks
+  include: java{{ ansible_os_family }}.yml
 
 - include: user.yml
   when: solr_create_user

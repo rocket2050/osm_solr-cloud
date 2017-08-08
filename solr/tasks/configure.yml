@@ -20,3 +20,10 @@
     - regexp: "^.?SOLR_TIMEZONE="
       line: 'SOLR_TIMEZONE="{{ solr_timezone }}"'
   notify: restart solr
+
+#- name: Apply Solr configuration changes.
+#  lineinfile:
+#    dest: '"{{ solr_install_path }}"/bin/solr.in.sh.orig'
+#    regexp: "ZK_HOST="
+#    line: "{{ hostvars[host].zookeeper_id }}"
+#    state: present
